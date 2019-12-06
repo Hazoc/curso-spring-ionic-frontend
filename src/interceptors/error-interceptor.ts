@@ -11,8 +11,7 @@ export class ErrorInterceptor implements HttpInterceptor {
         public storage: StorageService,
         public alertCtrl: AlertController){}
 
-    intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>>{
-        console.log("passou no interceptor");
+    intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>>{        
         return next.handle(req)
         .catch((error, caught) => {
 
